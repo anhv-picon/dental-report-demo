@@ -1,0 +1,258 @@
+.container {
+  padding: 0;
+  height: 100vh;
+  display: flex;
+}
+
+.upper-container {
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  background: linear-gradient(to left, #88bfff, rgb(186, 228, 255));
+  transition: width 0.5s ease;
+  box-shadow: 0px 0px 37px 6px rgba(0, 0, 0, 0.25);
+  position: relative;
+
+  &__page-image {
+    width: 45%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 100%;
+    box-shadow: 0px 0px 37px 6px rgba(0, 0, 0, 0.25);
+    transition: width 0.5s ease;
+
+    img {
+      margin-left: -100px;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &__overlay-text {
+      margin-top: 30vh;
+      position: absolute;
+      color: black;
+      font-weight: bold;
+      text-align: center;
+      padding: 10px;
+    }
+  }
+
+  &__page-image-active {
+    width: 0%;
+  }
+
+  &__recorder {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: width 0.5s ease, opacity 0.5s ease;
+
+    &__top {
+      align-self: flex-start;
+      font-size: 18px;
+      width: 100%;
+      padding: 6px 10px;
+      text-align: right;
+      color: white;
+      font-weight: bold;
+
+      &__input {
+        cursor: pointer;
+      }
+    }
+
+    &__center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      width: 100%;
+    }
+
+    .page-text {
+      font-weight: bold;
+      font-size: 20px;
+      text-align: center;
+    }
+  }
+
+  &__recorder-center {
+    width: 100%;
+  }
+
+  &__nav-bar {
+    padding: 16px 12px 6px 6px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+
+    &__button{
+      display: flex;
+      cursor: pointer;
+      flex-direction: row;
+    }
+
+    &__button:hover{
+      opacity: 0.5;
+    }
+  }
+}
+
+.upper-container-minimize {
+  width: 80px;
+  height: 100vh;
+}
+
+.lower-container {
+  height: 100vh;
+  width: calc(100vw - 80px);
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  transition: width 0.2s ease;
+  overflow: auto;
+
+  &__teeth-info {
+    width: 40%;
+    min-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__layout{
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+
+      &__right{
+        transform: rotate(-90deg);
+        margin-right: -20%;
+      }
+
+      &__left{
+        transform: rotate(90deg);
+        margin-left: -20%;
+      }
+    }
+
+    &__teeth-condition {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  }
+
+  &__teeth-treatment{
+    flex-grow: 1;
+    min-width: 500px;
+    height: calc(100vh - 40px);
+    margin: 20px;
+    border-radius: 20px;
+    padding: 20px;
+    background: linear-gradient(to left, #88bfff, rgb(186, 228, 255));
+    overflow: auto;
+    box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.25);
+
+    &__header{
+      padding: 10px;
+      display: flex;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    &__container{
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+
+}
+
+.fade-enter-active {
+  transition: opacity 1s;
+}
+
+.fade-enter-from {
+  opacity: 0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .upper-container {
+    height: 100vh;
+    overflow: auto;
+    transition: height 0.5s ease;
+
+    &__page-image {
+      width: 100%;
+      height: 60vh;
+      transition: height 0.5s ease;
+
+      img {
+        width: 100%;
+        margin: 0px;
+        height: 100%;
+      }
+    }
+
+    &__page-image-active {
+      width: 100%;
+      height: 0px
+    }
+
+    &__recorder {
+      width: 100%;
+      height: 60vh;
+      transition: height 0.5s ease;
+    }
+
+    &__recorder-center {
+      height: 100vh
+    }
+
+    &__nav-bar {
+      flex-direction: row;
+    }
+  }
+
+  .upper-container-minimize {
+    width: 100%;
+    height: 70px;
+  }
+
+  .lower-container {
+    width: 100%;
+  }
+
+  .lower-container {
+    height: calc(100vh - 70px);
+    width: 100%;
+    overflow: auto;
+
+
+    &__teeth-info {
+      min-width: 350px;
+      overflow: auto  ;
+      width: 100%;
+    }
+
+    &__teeth-treatment{
+      min-height: 500px;
+      height: auto;
+    }
+  }
+}

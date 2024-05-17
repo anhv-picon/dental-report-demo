@@ -1,0 +1,122 @@
+.teeth-container {
+  padding: 20px;
+  width: 90%;
+  aspect-ratio: 35/32;
+  display: flex;
+  flex-direction: column;
+}
+
+.upper {
+  display: flex;
+  flex-direction: row;
+  gap: 2%;
+  height: 50%;
+  width: 100%;
+
+  .upper-right {
+    position: relative;
+    transform: scaleX(-1);
+    width: 50%;
+  }
+
+  .upper-left {
+    position: relative;
+    width: 50%;
+  }
+}
+
+.lower {
+  display: flex;
+  flex-direction: row;
+  gap: 2%;
+  transform: scaleY(-1);
+  height: 50%;
+  width: 100%;
+
+  .lower-right {
+    position: relative;
+    transform: scaleX(-1);
+    width: 50%;
+  }
+
+  .lower-left {
+    position: relative;
+    width: 50%;
+  }
+}
+
+.tooth {
+  background: lightblue;
+
+  &__central_incisor {
+    width: 10%;
+    aspect-ratio: 1;
+    border-radius: 52% 48% 66% 34% / 30% 30% 70% 70%;
+    transform: rotate(0deg) translate(0px, 0);
+  }
+
+  &__lateral_incisor {
+    width: 10%;
+    aspect-ratio: 1;
+    border-radius: 52% 48% 73% 27% / 28% 30% 70% 72%;
+    transform: rotate(20deg) translate(90%, -100%);
+  }
+
+  &__carnine {
+    width: 10%;
+    aspect-ratio: 6/7;
+    border-radius: 52% 48% 80% 20% / 39% 30% 70% 61%;
+    transform: rotate(35deg) translate(120%, -170%);
+  }
+
+  &__biscupid1 {
+    width: 9%;
+    aspect-ratio: 5/7;
+    border-radius: 52% 48% 50% 50% / 36% 43% 57% 64%;
+    transform: rotate(55deg) translate(80%, -250%);
+  }
+
+  &__biscupid2 {
+    width: 10%;
+    aspect-ratio: 4/5;
+    border-radius: 52% 48% 50% 50% / 36% 43% 57% 64%;
+    transform: rotate(60deg) translate(70%, -290%);
+  }
+
+  &__molar1 {
+    width: 11%;
+    aspect-ratio: 1;
+    border-radius: 48% 52% 50% 50% / 31% 33% 67% 69%;
+    transform: rotate(62deg) translate(70%, -340%);
+  }
+
+  &__molar2 {
+    width: 11%;
+    aspect-ratio: 1;
+    border-radius: 48% 52% 50% 50% / 38% 60% 40% 62%;
+    transform: rotate(66deg) translate(70%, -350%);
+  }
+
+  &__wisdom {
+    width: 11%;
+    aspect-ratio: 1;
+    border-radius: 48% 52% 50% 50% / 47% 47% 53% 53%;
+    transform: rotate(70deg) translate(70%, -350%);
+  }
+}
+.tooth-decayed {
+  background-color: #9144b0;
+}
+.tooth-missing {
+  background-color: #b09144;
+}
+.tooth-filled {
+  background-color: #44b091;
+}
+.tooth-highlight {
+  // background-color: bac;
+  border: 2px solid red;
+}
+.tooth:hover {
+  cursor: pointer;
+}

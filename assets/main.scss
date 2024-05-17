@@ -1,0 +1,9 @@
+:root {
+  font-family: 'Consolas', Arial, sans-serif;
+
+  @media screen and (max-width: 1200px) {
+    overflow: auto;
+  }
+
+  overflow: hidden;
+}

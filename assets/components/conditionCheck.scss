@@ -1,0 +1,12 @@
+.check{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+  &__square{
+    width: 20px;
+    height: 20px;
+    aspect-ratio: 1;
+    margin-right: 10px;
+  }
+}
